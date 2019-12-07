@@ -409,3 +409,8 @@ ASALocalRun/
 ClassDiagram1.png
 ClassDiagram1_1.png
 ClassDiagram1_2.png
+/build/
+
+build.xml
+manifest.mf
+nbproject/
