@@ -78,6 +78,7 @@ public class CalcWindow extends JFrame {
         // Отдельно создаем кнопку =, назначаем слушателя,
         // назначаем actionCommand, чтобы не добавлять на buttonPanel:
         JButton resultButton = new JButton("=");
+        resultButton.setFont(new Font("Arial", Font.PLAIN, 20));
         resultButton.addActionListener(clickCommand);
         resultButton.setActionCommand(resultButton.getText());
         resultButton.setPreferredSize(new Dimension(this.getWidth(), 70)); // ширина окна на 70 пкс.
@@ -96,15 +97,18 @@ public class CalcWindow extends JFrame {
     }
     
     /**
-     * Создает кнопку, назначает слушателя, actionCommand 
+     * Создает кнопку, назначает слушателя, actionCommand, 
+     * задает мнемонический символ (Alt + символ с клавиатуры = нажатие кнопки)
      * и размещает на buttonPanel
      * @param label - название кнопки = actionCommand
      * @param listener ActionListener
      */
     private void addButton(String label, ActionListener listener) {
         JButton button = new JButton(label);
+        button.setFont(new Font("Arial", Font.PLAIN, 20));
         button.addActionListener(listener);
         button.setActionCommand(label);
+        button.setMnemonic(label.charAt(0));
         buttonPanel.add(button);
     }
     
